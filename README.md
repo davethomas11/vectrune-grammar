@@ -8,14 +8,45 @@ Provides syntax highlighting for `.rune` files in editors and platforms that sup
 
 `source.rune`
 
-## Highlighted
+## Features
 
-- `@Section` headers (`@App`, `@Route`, `@Page`, `@Logic`, `@Style`, etc.)
-- Keywords (`if`, `then`, `else`, `for`, `in`, `return`, `stop`, `action`, `func`, `derive`, etc.)
-- Strings, numbers, booleans, and null literals
+Syntax highlighting for:
+
+### Sections
+- `@Section` headers with optional identifiers and qualifiers
+  - Basic: `@App`, `@Frontend`, `@Backend`
+  - With ID: `@Page/home`, `@Logic/game`, `@Style/board`
+  - With HTTP verbs and paths: `@Route/GET /users/{id}`, `@Schema/User`
+
+### Keywords
+- Control flow: `if`, `then`, `else`, `for`, `in`, `return`, `stop`, `when`
+- Logic: `and`, `or`, `not`
+- Special: `from`, `use`, `swap`, `full`
+
+### Definitions
+- Actions: `action play(index):`
+- Functions: `func win(board, player):`
+- Block keywords: `run:`, `state:`, `view:`, `derive:`, `tokens:`, `presets:`, `rules:`
+
+### Built-in Functions
+- `respond`, `log`, `validate`
+- `parse-json`
+- CSV operations: `csv.read`, `csv.write`, `csv.append`
+
+### Literals & Values
+- Strings: `"double-quoted"` with escape sequences
+- Numbers: `0`, `42`, `3.14`, `-1`
+- Booleans and special values: `true`, `false`, `null`, `draw`
+
+### Advanced Syntax
+- Template interpolation: `{variable}`, `{obj.prop}`, `{array.[index]}`
+- Record assignments: `name = value`, `board.[index] = turn`
+- Record markers: `+ entry`
+- CSS-style selectors in `@Style` blocks: `.class:`, `element:`
+- Operators: `==`, `!=`, `<=`, `>=`, `->`, `=>`, `++`, `--`, `+`, `-`, `*`, `/`, `&`, `|`
+- Path placeholders: `%ROOT%`, `%PLACEHOLDER%`
+- Shebang: `#!RUNE` (not treated as regular comments)
 - `#` line comments
-- Template interpolation (`{variable}`, `{obj.prop}`, `{array.[index]}`)
-- Operators
 
 ## Usage
 
